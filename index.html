@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjaykumar - Ethical Hacker & Cybersecurity Professional</title>
+    <meta name="description" content="Portfolio of Sanjaykumar - Aspiring ethical hacker with expertise in cybersecurity, penetration testing, and network security.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a192f;
+            --bg-secondary: #112240;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda;
+            --accent-hover: #4dd9b8;
+            --white: #e6f1ff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: attr(data-number);
+            color: var(--accent);
+            margin-right: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--accent);
+        }
+
+        .resume-btn {
+            padding: 0.7rem 1.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            color: var(--accent) !important;
+            transition: all 0.3s;
+        }
+
+        .resume-btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(100, 255, 218, 0.05));
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(100, 255, 218, 0.1) 50%, 
+                transparent 70%);
+            animation: shimmer 3s infinite;
+            pointer-events: none;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(100, 255, 218, 0.2), inset 0 0 20px rgba(100, 255, 218, 0.05);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(100, 255, 218, 0.4), inset 0 0 30px rgba(100, 255, 218, 0.1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .hero-intro {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: attr(data-number);
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--bg-secondary);
+            max-width: 300px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skills-list li {
+            list-style: none;
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: '▹';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Completely remove left vertical line and connector for certifications */
+        #certifications .timeline {
+            border-left: none !important;
+            position: static !important;
+            padding-left: 0 !important;
+        }
+
+        #certifications .timeline::before {
+            display: none !important;
+        }
+
+        #certifications .timeline-item::before {
+            display: none !important;
+        }
+
+        #certifications .timeline-item::after {
+            display: none !important;
+        }
+
+        /* Remove timeline and convert certification items to cards */
+        #certifications .timeline {
+            border-left: none;
+            padding-left: 0;
+            display: grid;
+            gap: 2rem;
+        }
+
+        #certifications .timeline-item {
+            position: relative;
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.1);
+        }
+
+        /* Hover effect */
+        #certifications .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 18px rgba(100, 255, 218, 0.25);
+        }
+
+        /* Remove timeline dot effect if exists */
+        #certifications .timeline-item::before {
+            display: none;
+        }
+
+        /* Typography inside cards */
+        #certifications .timeline-date {
+            font-size: 0.95rem;
+            margin-bottom: 0.7rem;
+            color: var(--accent);
+        }
+
+        #certifications h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        #certifications h4 {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        #certifications ul li {
+            color: var(--text-secondary);
+        }
+
+
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.4rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item h4 {
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+        }
+
+        .timeline-item li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item li::before {
+            content: '▹';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--bg-secondary);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            nav ul {
+                position: fixed;
+                right: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: var(--bg-secondary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-container {
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#home"  class="nav-link active">Home</a></li>
+                <li><a href="#about"  class="nav-link">About</a></li>
+                <li><a href="#skills"  class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="" class="resume-btn">Resume</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-intro">Hi, my name is</p>
+                <h1>Sanjaykumar.</h1>
+                <h2>I build secure digital systems.</h2>
+                <p class="hero-description">
+                    I'm an aspiring ethical hacker specializing in cybersecurity and penetration testing. 
+                    Currently focused on building secure applications and strengthening my knowledge in 
+                    network security through hands-on experience with tools like Nmap, Wireshark, and Burp Suite.
+                </p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <img src="./Profile-Photo.jpg" alt="Sanjaykumar - Ethical Hacker">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title fade-in" data-number="01.">About Me</h2>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p>
+                    Hello! I'm Sanjaykumar, an ethical hacker with hands-on experience in cybersecurity projects. 
+                    My journey in security began with a passion for understanding how systems work and how to protect them.
+                </p>
+                <p>
+                    I've developed practical skills through platforms like TryHackMe and have worked on projects 
+                    including a Password Strength Checker and Port Scanner. My focus is on penetration testing, 
+                    network security, and web application security.
+                </p>
+                <p>
+                    I'm currently pursuing my BE in Computer Science Engineering at Government College of Engineering, 
+                    Erode, maintaining a strong academic record while actively expanding my cybersecurity knowledge.
+                </p>
+                <p>Here are some technologies and tools I work with:</p>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>Nmap</li>
+                    <li>Wireshark</li>
+                    <li>Burp Suite</li>
+                    <li>Metasploit</li>
+                    <li>Linux</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title fade-in" data-number="02.">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Programming</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3>Security Tools</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Nmap</span>
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">Burp Suite</span>
+                    <span class="skill-tag">Metasploit</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3>Operating Systems</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3>Specializations</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Penetration Testing</span>
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Web App Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title fade-in" data-number="03.">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3>Password Strength Checker</h3>
+                </div>
+                <p>
+                    Developed a password strength checker using conditional logic to validate passwords based on 
+                    length and character types. The tool evaluates passwords for letters, numbers, and special 
+                    characters, providing feedback on password security levels.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Conditional Logic</span>
+                    <span class="tech-tag">Security Validation</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <strong>Key Features:</strong> 60 lines of code, validates length (≥16 chars), 
+                    checks for character types, improved understanding of password validation concepts.
+                </p>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <h3>Port Scanner</h3>
+                </div>
+                <p>
+                    Built a simple port scanner that accepts an IP address/hostname and scans a configurable 
+                    port range to report open (active) and closed (inactive) ports. Includes TCP/IP(UDP) protocol 
+                    implementation and basic banner grabbing to identify running services.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Socket Programming</span>
+                    <span class="tech-tag">Network Security</span>
+                    <span class="tech-tag">Banner Grabbing</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <strong>Key Features:</strong> Network communication, port/service enumeration, 
+                    gained practical experience in socket programming.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+<section id="education">
+    <h2 class="section-title fade-in" data-number="04.">Education</h2>
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">2026 • Expected</div>
+            <h3>BE in Computer Science Engineering</h3>
+            <h4>Government College of Engineering, Erode</h4>
+            <ul>
+                <li>CGPA: 7.67/10</li>
+                <li>Focus on cybersecurity, networking, and software development</li>
+                <li>Active participation in security competitions and CTF challenges</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">2022 • Completed</div>
+            <h3>Higher Secondary Certificate (HSE)</h3>
+            <h4>Jawahar Matriculation Higher Secondary School, B. Mutlur</h4>
+            <ul>
+                <li>Percentage: 92%</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">2020 • Completed</div>
+            <h3>Secondary School Leaving Certificate (SSLC)</h3>
+            <h4>Jawahar Matriculation Higher Secondary School, B. Mutlur</h4>
+            <ul>
+                <li>Percentage: 76%</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Certifications Section -->
+<section id="certifications">
+    <h2 class="section-title " data-number="05.">Certifications</h2>
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">2026 • In Progress</div>
+            <h3>Jr.Penetration Certification</h3>
+            <h4>TryHackMe</h4>
+            <ul>
+                <li>Hands-on penetration testing training</li>
+                <li>Real-world security scenarios and challenges</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">2025 • Expected</div>
+            <h3>Introduction to Cybercrime</h3>
+            <h4>Simplilearn</h4>
+            <ul>
+                <li>Comprehensive overview of cybercrime fundamentals</li>
+                <li>Understanding threats and security measures</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title fade-in" data-number="05.">Get In Touch</h2>
+        <div class="contact-content fade-in">
+            <p>
+                I'm currently looking for opportunities in cybersecurity and ethical hacking. 
+                Whether you have a question or just want to say hi, feel free to reach out!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:sanjay03d5212@gmail.com">sanjay0306212@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91 6381192496</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Chidambaram, TamilNadu</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sanjay-kumar-s-130250324" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Sanjaykumars-2005" target="_blank">Github</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sanjaykumar. Built with passion for cybersecurity.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            appearOnScroll.observe(element);
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
